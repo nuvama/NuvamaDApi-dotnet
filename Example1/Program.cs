@@ -125,7 +125,7 @@ namespace NorenRestSample
                             nApi.SendGetOrderBook(Handlers.OnOrderBookResponse, "");
                             break;
                         case "P":
-                            nApi.SendGetPositionBook(Handlers.OnPositionsResponse);
+                            //nApi.SendGetPositionBook(Handlers.OnPositionsResponse);
                             break;
                         case "S":
                             string exch;
@@ -138,6 +138,9 @@ namespace NorenRestSample
                             break;
                         case "T":
                             nApi.SendGetTradeBook(Handlers.OnTradeBookResponse);
+                            break;
+                        case "C":
+                            nApi.GetClients(Handlers.OnGetAllClients);
                             break;
                         case "Q":
                             nApi.SendLogout(Handlers.OnAppLogout);
@@ -204,6 +207,7 @@ namespace NorenRestSample
             Console.WriteLine("P: get Positions");
             Console.WriteLine("B: place a buy order");
             Console.WriteLine("S: get security info");
+            Console.WriteLine("C: get Clients");
         }
         #endregion
     }
